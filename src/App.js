@@ -1,10 +1,14 @@
-import logo from './logo.svg';
 import './App.css';
 import Routes from "./router/Routes"
+import {AuthProvider} from "./components/AuthContext/AuthProvider"
+import SearchBar from "./components/searchBar/SearchBar"
 
 function App() {
   return (
-    <Routes />
+    <AuthProvider>
+      <SearchBar />
+      <Routes />
+    </AuthProvider>
   );
 }
 
