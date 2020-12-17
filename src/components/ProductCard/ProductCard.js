@@ -1,10 +1,19 @@
+import { useHistory } from "react-router-dom";
 import "./ProductCardStyle.scss"
 import StarIcon from '@material-ui/icons/Star';
+import {useContext} from "react"
+import {AuthContext} from "../AuthContext/AuthProvider"
 
 export default function ProductCard({title, price, rating, image, id}){
+  const {setDetailProps} = useContext(AuthContext)
+  const history = useHistory()
   const startList = []
   for(let i=0; i<rating; i++){
     startList.push(<StarIcon className="star" />)
+  }
+  const go = () =>{
+    setDetailProps({title, price, rating, image})
+    history.push(`/detail/${id}`)
   }
   return(
     <div className="product-card-container">
@@ -13,8 +22,8 @@ export default function ProductCard({title, price, rating, image, id}){
         <p className="price">${price}</p>
         <p className="rating">{startList}</p>
       </div>
-      <div className="img-container">
-        <img className="product-img" src={image} />
+      <div className="img-container" onClick={go}>
+        <img className="product-img" src={image} alt="" />
       </div>
       <div className="add-button">
         <p className="button-text">Add to Basket</p>

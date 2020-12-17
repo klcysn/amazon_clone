@@ -1,14 +1,20 @@
-import React, {useContext, createContext, useState} from "react"
+import React, {createContext, useState} from "react"
 
-const AuthContext = createContext()
+export const AuthContext = createContext()
 
 export const AuthProvider = ({children}) =>{
     const [isLoggedIn, setLoggedIn] = useState(false)
+    const [detailProps, setDetail] = useState({})
+
+    const setDetailProps = (items) => {
+        setDetail(items)
+    }
+
     const authenticate = () =>{
         setLoggedIn(s => !s)
     }
     return(
-        <AuthContext.Provider value ={isLoggedIn, setLoggedIn}>
+        <AuthContext.Provider value ={isLoggedIn, authenticate, setDetailProps, detailProps}>
             {children}
         </AuthContext.Provider>
     )

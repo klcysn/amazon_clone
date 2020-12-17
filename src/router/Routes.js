@@ -4,14 +4,15 @@ import {
   Switch,
   Route
 } from "react-router-dom";
-import {Home} from "../pages"
+import {Home, DetailPage} from "../pages"
 
 
 const Routes = () =>{
   return(
     <Router>
       <Switch>
-        <Route path="/" component={Home} />
+        <Route path="/detail/:id" component={DetailPage} />
+        <Route path="/" component={Home} exact />
       </Switch>
     </Router>
   )

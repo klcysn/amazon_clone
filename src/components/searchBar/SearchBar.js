@@ -1,11 +1,16 @@
 import SearchIcon from "@material-ui/icons/Search"
 import ShoppingBasketIcon from "@material-ui/icons/ShoppingBasket";
 import "./SearchBar.scss"
+import { useHistory } from "react-router-dom";
 
 export default function SearchBar(){
+  const history = useHistory()
+  const goHome = () =>{
+    history.push("/")
+  }
   return(
     <div className="search-bar-container">
-      <img className="amazon-logo" src="http://pngimg.com/uploads/amazon/amazon_PNG11.png"/>
+      <img className="amazon-logo" src="http://pngimg.com/uploads/amazon/amazon_PNG11.png" onClick={goHome} alt="Product"/>
       <div className="input-container">
         <input className="search-input" />
         <SearchIcon className="search-icon" />
