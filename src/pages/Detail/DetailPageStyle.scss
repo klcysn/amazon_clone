@@ -1,0 +1,35 @@
+.detail-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+}
+
+.title-detail{
+    align-self: flex-start;
+    font-weight: 700;
+}
+
+.star-detail{
+    color: #FCE100;
+    align-self: flex-start;
+}
+
+.add-button{
+    text-align: center;
+}
+
+.button-text{
+    display: inline-block;
+    background-color: #F0C14B;
+    padding: 0.1rem;
+    border: 3px outset #F0C14B;
+    cursor: pointer;
+    &:active{
+        transform: translateY(3px);
+    }
+}
+
+.image{
+    width: 20rem
+}
