@@ -1,0 +1,41 @@
+.product-card-container{
+    background-color: white;
+    display: inline-block;
+    padding: 1rem;
+    width: 35%;
+    overflow: hidden;
+    box-shadow: 5px 5px 5px gray;
+}
+
+.price{
+    font-weight: 700;
+}
+.img-container{
+    text-align: center;
+    &:active{
+        transform: translateY(3px);
+    }
+}
+.product-img{
+    height: 20rem;
+    object-fit:contain;
+}
+
+.star{
+    color: #FCE100
+}
+
+.add-button{
+    text-align: center;
+}
+
+.button-text{
+    display: inline-block;
+    background-color: #F0C14B;
+    padding: 0.1rem;
+    border: 3px outset #F0C14B;
+    cursor: pointer;
+    &:active{
+        transform: translateY(3px);
+    }
+}
