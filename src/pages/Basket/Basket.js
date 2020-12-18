@@ -27,6 +27,12 @@ export const Basket = () => {
         <div>
             <SearchBar />
             {
+                basket.length === 0
+                ?
+                <div className="empty-message-container">
+                    <p className="empty-message">You haven't added any product in shopping basket yet.</p>
+                </div>
+                :
                 writedList?.map(({image, title, price, id})=>{
                         return(
                             <div className="basket-container">

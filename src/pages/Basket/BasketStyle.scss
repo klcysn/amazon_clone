@@ -54,3 +54,16 @@
     vertical-align: middle;
     width: 2rem;
 }
+
+.empty-message-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 15rem;
+}
+
+.empty-message{
+    color: #F0C14B;
+    font-weight: 900;
+    font-size: 2rem;
+}
