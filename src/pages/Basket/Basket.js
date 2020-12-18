@@ -13,7 +13,7 @@ export const Basket = () => {
     }
     useEffect(()=>{
         let filteredList = []
-        filteredList = basket.filter((item) => !filteredList.includes(item))
+        filteredList = basket.filter((item) => item.productIndex === basket.findIndex(x=>x.id === item.id))
         setWritedList(filteredList)
     }, [basket])
 
