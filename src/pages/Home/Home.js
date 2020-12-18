@@ -22,7 +22,7 @@ export const Home = () => {
                     image="https://images-na.ssl-images-amazon.com/images/I/81O%2BGNdkzKL._AC_SX450_.jpg" />
                 <ProductCard
                     id="4903850"
-                    title="Samsung LC49RG90SSUXEN 49' Curved LED Gaming Monitor"
+                    title="Samsung Smart Watch"
                     price={199.99}
                     rating={3}
                     image="https://images-na.ssl-images-amazon.com/images/I/71Swqqe7XAL._AC_SX466_.jpg" />
