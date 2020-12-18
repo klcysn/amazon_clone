@@ -1,9 +1,12 @@
+import {useContext} from "react"
 import SearchIcon from "@material-ui/icons/Search"
 import ShoppingBasketIcon from "@material-ui/icons/ShoppingBasket";
 import "./SearchBar.scss"
 import { useHistory } from "react-router-dom";
+import {AuthContext} from "../AuthContext/AuthProvider"
 
 export default function SearchBar(){
+  const {basket} = useContext(AuthContext)
   const history = useHistory()
   const goHome = () =>{
     history.push("/")
@@ -29,7 +32,7 @@ export default function SearchBar(){
       </div>
       <div className="search-bar-shopping-basket">
         <ShoppingBasketIcon style={{fontSize: 30}} className="basket-icon" />
-        <span className="bold-span">{0}</span>
+        <span className="bold-span">{basket.length}</span>
       </div>
     </div>
   )

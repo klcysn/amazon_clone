@@ -5,7 +5,7 @@ import {useContext} from "react"
 import {AuthContext} from "../AuthContext/AuthProvider"
 
 export default function ProductCard({title, price, rating, image, id}){
-  const {setDetailProps} = useContext(AuthContext)
+  const {setDetailProps, addBasket} = useContext(AuthContext)
   const history = useHistory()
   const startList = []
   for(let i=0; i<rating; i++){
@@ -14,6 +14,9 @@ export default function ProductCard({title, price, rating, image, id}){
   const go = () =>{
     setDetailProps({title, price, rating, image})
     history.push(`/detail/${id}`)
+  }
+  const onAdd = () => {
+    addBasket({title, price, rating, image, id})
   }
   return(
     <div className="product-card-container">
@@ -26,7 +29,7 @@ export default function ProductCard({title, price, rating, image, id}){
         <img className="product-img" src={image} alt="" />
       </div>
       <div className="add-button">
-        <p className="button-text">Add to Basket</p>
+        <p className="button-text" onClick={onAdd}>Add to Basket</p>
       </div>
     </div>
   )
