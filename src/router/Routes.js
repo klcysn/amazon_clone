@@ -4,7 +4,7 @@ import {
   Switch,
   Route
 } from "react-router-dom";
-import {Home, DetailPage} from "../pages"
+import {Home, DetailPage, Basket} from "../pages"
 
 
 const Routes = () =>{
@@ -12,6 +12,7 @@ const Routes = () =>{
     <Router>
       <Switch>
         <Route path="/detail/:id" component={DetailPage} />
+        <Route path="/basket" component={Basket} />
         <Route path="/" component={Home} exact />
       </Switch>
     </Router>

@@ -1,0 +1,56 @@
+.basket-container{
+    display: flex;
+    align-items: center ;
+    justify-content: space-between;
+    column-gap: 1rem;
+    margin: 2rem;
+    border: 1px solid gray;
+    padding: 1rem;
+    box-shadow: 3px 3px 6px gray;
+    border-radius: 10px;
+}
+
+.basket-img{
+    width: 4.5rem;
+    height: 6rem;
+}
+
+.basket-title{
+    width: 46rem;
+    font-weight: 700;
+}
+
+.basket-price{
+    width: 3rem;
+    font-weight: 900;
+}
+
+.basket-button-container{
+    display: flex;
+    column-gap: 1rem;
+    align-items: center;
+    justify-content: space-between;
+    justify-content: center;
+    border: 1px solid #F0C14B;
+    width: 6rem;
+    height: 1.5rem;
+}
+
+.increase-decrease-button{
+    text-align: center;
+    vertical-align: middle;
+    background-color: #F0C14B;
+    width: 2rem;
+    height: 1.5rem;
+    padding: 0.1rem;
+    cursor: pointer;
+    &:active{
+        transform: translateY(2px);
+    }
+}
+
+.basket-quantity{
+    text-align: center;
+    vertical-align: middle;
+    width: 2rem;
+}
