@@ -10,7 +10,7 @@ export default function SearchBar(){
 
   return(
     <div className="search-bar-container">
-      <Link className="link" to="/">
+      <Link className="link" to="/amazon_clone">
         <img className="amazon-logo" src="http://pngimg.com/uploads/amazon/amazon_PNG11.png" alt="Product"/>
       </Link>
       <div className="input-container">
