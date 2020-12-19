@@ -17,10 +17,12 @@ export default function SearchBar(){
         <input className="search-input" />
         <SearchIcon className="search-icon" />
       </div>
-      <div className="search-bar-button-container">
-        <span className="normal-span">Hello Guest</span>
-        <span className="bold-span">Sign In</span>
-      </div>
+      <Link to="/signin">
+        <div className="search-bar-button-container">
+          <span className="normal-span">Hello Guest</span>
+          <span className="bold-span">Sign In</span>
+        </div>
+      </Link>
       <div className="search-bar-button-container">
         <span className="normal-span">Returns</span>
         <span className="bold-span">& Orders</span>
