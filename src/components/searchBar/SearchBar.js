@@ -10,14 +10,14 @@ export default function SearchBar(){
 
   return(
     <div className="search-bar-container">
-      <Link to="/">
+      <Link className="link" to="/">
         <img className="amazon-logo" src="http://pngimg.com/uploads/amazon/amazon_PNG11.png" alt="Product"/>
       </Link>
       <div className="input-container">
         <input className="search-input" />
         <SearchIcon className="search-icon" />
       </div>
-      <Link to="/signin">
+      <Link className="link" to="/signin">
         <div className="search-bar-button-container">
           <span className="normal-span">Hello Guest</span>
           <span className="bold-span">Sign In</span>
@@ -31,7 +31,7 @@ export default function SearchBar(){
         <span className="normal-span">Your</span>
         <span className="bold-span">Prime</span>
       </div>
-      <Link to="/basket">
+      <Link className="link" to="/basket">
         <div className="search-bar-shopping-basket">
           <ShoppingBasketIcon style={{fontSize: 30}} className="basket-icon" />
           <span className="bold-span">{basket.length}</span>

@@ -21,5 +21,6 @@ export const useStyles = makeStyles((theme) => ({
     },
     link: {
         color: "#3F51B5",
+        textDecoration: "none",
     }
   }));
