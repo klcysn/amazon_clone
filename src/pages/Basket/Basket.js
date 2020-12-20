@@ -1,11 +1,13 @@
 import { useContext, useState, useEffect } from "react"
 import { AuthContext } from "../../components/AuthContext/AuthProvider"
 import SearchBar from "../../components/searchBar/SearchBar"
+import {useHistory} from "react-router-dom"
 import "./BasketStyle.scss"
 
 export const Basket = () => {
-    const { basket, addBasket, removeFromBasket } = useContext(AuthContext)
+    const { basket, addBasket, removeFromBasket, isLoggedIn } = useContext(AuthContext)
     const [writedList, setWritedList] = useState([])
+    const history = useHistory()
 
     const findQuantity = (id) =>{
         const quantity = basket?.filter((item) =>item.id === id)
@@ -23,8 +25,16 @@ export const Basket = () => {
         const itemIndex = basket.findIndex(x => x.id === id)
         removeFromBasket(itemIndex)
     }
+    const onBuy = () =>{
+        if(isLoggedIn){
+            return null
+        }else{
+            history.push("/signin")
+        }
+
+    }
     return (
-        <div>
+        <div className="basket-main-container">
             <SearchBar />
             {
                 basket.length === 0
@@ -48,6 +58,9 @@ export const Basket = () => {
                         )
                 })
             }
+             <div className="buy-button" onClick={onBuy}>
+                <p className="buy-button-text">Buy via Stripe</p>
+            </div>
         </div>
     )
 }
