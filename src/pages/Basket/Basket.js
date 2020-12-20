@@ -3,6 +3,7 @@ import { AuthContext } from "../../components/AuthContext/AuthProvider"
 import SearchBar from "../../components/searchBar/SearchBar"
 import {useHistory} from "react-router-dom"
 import "./BasketStyle.scss"
+import Stripe from "../../components/Stripe/Stripe"
 
 export const Basket = () => {
     const { basket, addBasket, removeFromBasket, isLoggedIn } = useContext(AuthContext)
@@ -34,7 +35,7 @@ export const Basket = () => {
 
     }
     return (
-        <div className="basket-main-container">
+        <div>
             <SearchBar />
             {
                 basket.length === 0
@@ -58,9 +59,7 @@ export const Basket = () => {
                         )
                 })
             }
-             <div className="buy-button" onClick={onBuy}>
-                <p className="buy-button-text">Buy via Stripe</p>
-            </div>
+            {basket.length !== 0 && <Stripe />}
         </div>
     )
 }
